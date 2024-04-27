@@ -1,0 +1,49 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@using SocialNetwork.Models.DatabaseModels
+@model List<Post>
+<partial name="/Views/Shared/_Header.cshtml" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/posts.css" type="text/css">
+    <title>Posts</title>
+</head>
+<body>
+    @{
+        string id = Context.Request.RouteValues["id"].ToString();
+    }
+    <div class="labelFrame">
+        <label class="labelPosts">Posts</label>
+    </div>
+    <div class="postsFrame">
+        @foreach (Post post in Model)
+        {
+            <a asp-controller="Post" asp-action="Post" asp-route-Id="@id" asp-route-IdPost="@post.Id" class="a">
+        <div class="postFrame">
+            <div class="authorFrame">
+                <label class="author">@post.Account.Name</label>
+            </div>
+            <div class="nameFrame">
+                <label class="name">Name</label>
+            </div>
+            <div class="timeFrame">
+                <label class="time">@post.DateTime.</label>
+            </div>
+
+
+            <div class="textFrame">
+                <label class="text">
+                    @post.Text
+                </label>
+            </div>
+        </div>
+        </a>
+        }
+        
+    </div>
+</body>
+</html>
+

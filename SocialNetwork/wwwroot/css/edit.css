@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    height:100vh;
+    width:100vw;
+}
+.editFrame{
+    width:42%;
+    height:70%;
+    position:relative;
+    left:29%;
+    top:15%;
+    display: flex;
+    justify-content: center;
+    border:2px black solid;
+}
+.editLabel{
+    font-size:350%;
+}
+.eNameLabel{
+    font-size:200%;
+    position:absolute;
+    top:15%;
+}
+.eNameInp{
+    width:66%;
+    height:7%;
+    position:absolute;
+    top:22%;
+    font-size:180%;
+}
+.eDescLabel{
+    font-size:200%;
+    position:absolute;
+    top:38%;
+}
+.eDescArea{
+    width:66%;
+    height:18%;
+    position:absolute;
+    top:45%;
+    font-size:180%;
+}
+.eImage{
+    font-size:150%;
+    position:absolute;
+    top:75%;
+    left:30%;
+}
+.buttonsFrame{
+    width:60%;
+    height:10%;
+    position:absolute;
+    top:85%;
+}
+.editBtn{
+    width:45%;
+    height:90%;
+    color:white;
+    outline: none;
+    border:none;
+    border-radius:20%/40%;
+    background-color:green;
+    font-size:200%;
+}
+.cancelBtn{
+    width:45%;
+    height:90%;
+    outline: none;
+    border:2px black solid;
+    border-radius:20%/40%;
+    font-size:200%;
+    margin-left:9%;
+}

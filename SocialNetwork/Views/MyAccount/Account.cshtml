@@ -1,0 +1,47 @@
+﻿@model SocialNetwork.Models.DatabaseModels.Account
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@{
+    string id = Context.Request.RouteValues["id"].ToString();
+}
+@{
+    string idAccount = Context.Request.Query["IdAccount"].ToString();
+}
+<partial name="~/Views/Shared/_Header.cshtml" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/acc.css" type="text/css">
+    <title>Account</title>
+</head>
+<body>
+    <div class="accountFrame">
+        <div class="accountImageFrame">
+            @if (Model.Images.Count != 0)
+            {
+                <img src="data:image;base64,@Convert.ToBase64String(Model.Images.First().Image)" alt="avatarka">
+            }
+            else
+            {
+                <img src="~/Images/iroh.jpg" alt="avatarka">
+            }
+        </div>
+        <div class="accountInfoFrame">
+            <div class="accountNameFrame">
+                <label class="accountName">@Model.Name</label>
+            </div>
+            <div class="accountDescriptionFrame">
+                <label class="accountDescription">@Model.Description</label>
+            </div>
+        </div>
+    </div>
+
+    <form asp-controller="Chat" asp-action="EnterChat" asp-route-Id="@id" asp-route-IdAccount="@idAccount">
+        <button type="submit">Chat</button>
+    </form>
+
+
+</body>
+</html>

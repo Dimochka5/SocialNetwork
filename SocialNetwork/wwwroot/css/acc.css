@@ -1,0 +1,75 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.accountFrame {
+    width: 28%;
+    height: 59%;
+    position: relative;
+    border: 3px black solid;
+}
+
+.accountImageFrame {
+    width: 100%;
+    height: 65%;
+    position: relative;
+}
+
+    .accountImageFrame img {
+        width: 100%;
+        height: 100%;
+    }
+
+.accountInfoFrame {
+    width: 100%;
+    height: 35%;
+    border: 1px black solid;
+}
+
+.accountNameFrame {
+    width: 100%;
+    height: 30%;
+    border: 1px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accountName {
+    font-size: 300%;
+}
+
+.accountDescriptionFrame {
+    width: 100%;
+    height: 68%;
+    border: 1px black solid;
+    word-break: normal;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.accountDescription {
+    font-size: 150%;
+    margin-left: 3%;
+}
+
+.buttonsFrame {
+    width: 28%;
+    height: 12%;
+    border: 3px black solid;
+}
+
+    .buttonsFrame button {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: 1px black solid;
+        font-size: 160%;
+    }
+
+.Aform {
+    height: 33.33%;
+}

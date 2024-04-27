@@ -1,0 +1,22 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@using SocialNetwork.Models.DatabaseModels;
+<header>
+    <nav>
+        @{
+            string id = Context.Request.RouteValues["id"].ToString();
+        }
+        <form asp-action="Posts" asp-controller="Post" asp-route-Id="@id">
+            <button type="submit">Posts</button>
+            </form>
+        <form asp-action="CreatePost" asp-controller="Post" asp-route-Id="@id" method="get">
+            <button type="submit">Create Post</button>
+        </form>
+        <form asp-action="Accounts" asp-controller="MyAccount" asp-route-Id="@id" method="get">
+            <button type="submit">Accounts</button>
+        </form>
+        <form asp-action="Chats" asp-controller="Chat" asp-route-Id="@id" method="get">
+            <button type="submit">Chats</button>
+        </form>
+    </nav>
+</header>

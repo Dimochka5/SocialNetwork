@@ -1,0 +1,249 @@
+﻿.allFrame {
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background: #00b8ff;
+    display: flex;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.socialNetwork {
+    width: 200px;
+    height: 60px;
+    background: #00415a;
+    margin-left: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .socialNetwork label {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 27px;
+        color: #fff;
+    }
+
+.menuFrame {
+    width: 840px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 300px;
+}
+
+.menu {
+    width: 110px;
+    height: 30px;
+    background: #00415a;
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.account {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 65, 90, 0.6);
+    margin-left: 400px;
+}
+
+    .account image {
+        width: 100%;
+        height: 100%;
+    }
+
+.content {
+    width: 100%;
+    height: 1001px;
+    background: #001f2b;
+    padding-top: 10px;
+}
+
+.accountFrame {
+    width: 1900px;
+    margin-left: 10px;
+    height: 360px;
+    background: #00719c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountFrame2 {
+    width: 1691px;
+    height: 139px;
+    background: #009bd6;
+    margin-top: 150px;
+}
+
+.avatarka {
+    margin-left: 30px;
+    margin-top: -70px;
+    width: 192px;
+    height: 155px;
+}
+
+.avaImg {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.nameAccount {
+    width: 300px;
+    height: 50px;
+    margin-left: 225px;
+    margin-top: -78px;
+}
+
+.name {
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 44px;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.description {
+    width: 1420px;
+    height: 56px;
+    margin-left: 200px;
+    margin-top: 15px;
+}
+
+.desLabel {
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+}
+
+.accountContent {
+    width: 1900px;
+    height: 640px;
+    background: white;
+    margin-left: 10px;
+}
+
+.friendsList {
+    width: 335px;
+    height: 100%;
+    background: #00415a;
+    margin-left: 5px;
+}
+
+.friendsLabel {
+    width: 335px;
+    height: 70px;
+    background: #009bd6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.friendLabel2 {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: #fff;
+}
+
+.friendList {
+    width: 335px;
+    height: 560px;
+    background: #00415a;
+    overflow: auto;
+}
+
+.friend {
+    width: 297px;
+    height: 60px;
+    background: #00b8ff;
+    margin-left: 3px;
+    margin-top: 5px;
+}
+
+.avatarkaFriend {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+}
+
+.friendImg {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.friendName {
+    width: 162px;
+    height: 22px;
+    margin-top: -42px;
+    margin-left: 60px;
+}
+
+.friendNameLabel {
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+}
+
+.friendDesc {
+    width: 222px;
+    height: 23px;
+    margin-left: 60px;
+    margin-top: 2px;
+}
+
+.friendDescLabel {
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+
+.postsList {
+    width: 1510px;
+    height: 630px;
+    background: #00415a;
+    margin-left: 350px;
+    margin-top: -630px;
+    padding-top: 10px;
+    overflow: auto;
+}
+
+.post {
+    width: 1480px;
+    height: 620px;
+    background: #00719c;
+    margin-left: 15px;
+}

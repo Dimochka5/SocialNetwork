@@ -1,0 +1,34 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@using SocialNetwork.Models.DatabaseModels
+@model Post
+@{
+    string id = Context.Request.RouteValues["id"].ToString();
+}
+<form asp-action="EditPost" asp-controller="Post" method="post" asp-route-Id="@id" asp-route-idPost="@Model.Id" enctype="multipart/form-data">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="~/css/edit.css" type="text/css">
+        <title>Edit Post</title>
+    </head>
+    <body>
+        <div class="editFrame">
+            <label class="editLabel">Edit Post</label>
+
+            <label class="eDescLabel">Description</label>
+            <textarea cols="30" rows="10" class="eDescArea" name="NewText" value="@Model.Text"></textarea>
+
+            <input type="file" class="eImage" name="NewImage">
+
+            <div class="buttonsFrame">
+                <button class="editBtn" type="submit">Edit</button>
+                <button class="cancelBtn">Cancel</button>
+            </div>
+
+        </div>
+    </body>
+</html>
+</form>

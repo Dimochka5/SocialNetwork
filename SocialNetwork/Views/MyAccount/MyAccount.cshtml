@@ -1,0 +1,49 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@using SocialNetwork.Models.DatabaseModels
+@model Account
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="account2.css">
+    <link rel="stylesheet" href="~/css/acc.css" type="text/css">
+    <title>Account</title>
+</head>
+<body>
+    <partial name="~/Views/Shared/_Header.cshtml"/>
+    <div class="accountFrame">
+        <div class="accountImageFrame">
+            @if (Model.Images.Count!=0)
+            {
+                <img src="data:image;base64,@Convert.ToBase64String(Model.Images.First().Image)" alt="avatarka">
+            }
+            else
+            {
+                <img src="~/Images/iroh.jpg" alt="avatarka">
+            }
+        </div>
+        <div class="accountInfoFrame">
+            <div class="accountNameFrame">
+                <label class="accountName">@Model.Name</label>
+            </div>
+            <div class="accountDescriptionFrame">
+                <label class="accountDescription">@Model.Description</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttonsFrame">
+        <form asp-action="Edit" asp-controller="MyAccount" asp-route-Id="@Model.Id" class="Aform">
+        <button>Edit account</button>
+        </form>
+        <form asp-action="Delete" asp-controller="MyAccount" method="post" asp-route-Id="@Model.Id" class="Aform">
+        <button>Delete account</button>
+        </form>
+        <form asp-action="Login" asp-controller="RegLog" method="get" class="Aform">
+        <button>Log out</button>
+        </form>
+    </div>
+</body>
+</html>

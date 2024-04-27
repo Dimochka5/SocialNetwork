@@ -1,0 +1,18 @@
+﻿@model List<SocialNetwork.Models.DatabaseModels.Account>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@{
+    string id = Context.Request.RouteValues["id"].ToString();
+}
+@foreach(SocialNetwork.Models.DatabaseModels.Account Account in Model)
+{
+    <form asp-controller="MyAccount" asp-action="AnotherAccount" asp-route-IdAccount="@Account.Id" asp-route-Id="@id">
+    <div>
+        <button type="submit">
+        <label>
+            @Account.Name
+        </label>
+        </button>
+    </div>
+    </form>
+}

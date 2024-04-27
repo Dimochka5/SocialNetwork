@@ -1,0 +1,10 @@
+﻿@model SocialNetwork.Models.DatabaseModels.Chat
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@{
+    string id = Context.Request.RouteValues["id"].ToString();
+}
+<form asp-controller="Chat" asp-action="Update" asp-route-Id="@id" asp-route-IdChat="@Model.Id" method="post">
+    <input name="updateName"/>
+    <button type="submit">Update</button>
+</form>

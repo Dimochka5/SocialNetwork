@@ -1,0 +1,72 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@using SocialNetwork.Models.DatabaseModels
+@model Post
+@{
+    int id = Convert.ToInt32(Context.Request.RouteValues["id"].ToString());
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/post.css" type="text/css">
+    <title>Post</title>
+</head>
+<body>
+    <div class="postFrame">
+
+        <div class="headerFrame">
+            <div class="authorFrame">
+                <label class="author">@Model.Account.Name</label>
+            </div>
+            <div class="timeFrame">
+                <label class="time">@Model.DateTime</label>
+            </div>
+        </div>
+
+        @if (id == Model.IdAccount)
+        {
+            <a asp-controller="Post" asp-action="EditPost" asp-route-Id="@id" asp-route-IdPost="@Model.Id" method="get">
+            Edit
+            </a>
+
+            <a asp-controller="Post" asp-action="DeletePost" asp-route-Id="@id" asp-route-IdPost="@Model.Id" method="post">
+            Delete
+            </a>
+        }
+        <div class="textFrame">
+            <label class="text">@Model.Text</label>
+        </div>
+
+        <div class="imageFrame">
+            @if (Model.Images.Count != 0)
+            {
+                <img src="data:image;base64,@Convert.ToBase64String(Model.Images.First().Image)" alt="Image" class="imagePost">
+            }
+            else
+            {
+                <img src="~/Images/iroh.jpg" alt="Image" class="imagePost">
+            }
+        </div>
+    </div>
+
+    <form asp-controller="Comment" asp-action="Create" asp-route-Id="@id" asp-route-IdPost="@Model.Id">
+        <input type="text" name="text"/>
+        <button type="submit">Comment</button>
+    </form>
+    @foreach(Comment comment in Model.Comments){
+    <label>@comment.Text</label>
+        @if (id == comment.IdAccount)
+        {
+            <form asp-controller="Comment" asp-action="Update" asp-route-Id="@id" asp-route-IdPost="@Model.Id" asp-route-IdComment="@comment.Id" method="post">
+            <input type="text" name="text" />
+            <button type="submit">Edit</button>
+            </form>
+            <form asp-controller="Comment" asp-action="Delete" asp-route-Id="@id" asp-route-IdPost="@Model.Id" asp-route-IdComment="@comment.Id" method="post">
+            <button>Delete</button>
+            </form>
+        }
+    }
+</body>
+</html>

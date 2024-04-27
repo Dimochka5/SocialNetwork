@@ -1,0 +1,33 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@model SocialNetwork.Models.DatabaseModels.Account
+<form asp-action="Edit" asp-controller="MyAccount" method="post" asp-route-Id="@Model.Id" enctype="multipart/form-data">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="~/css/edit.css" type="text/css">
+        <title>Edit account</title>
+    </head>
+    <body>
+        <div class="editFrame">
+            <label class="editLabel">Edit Account</label>
+
+            <label class="eNameLabel">Nickname</label>
+            <input type="text" class="eNameInp" name="newName" value="@Model.Name">
+
+            <label class="eTextLabel">Description</label>
+            <textarea cols="30" rows="10" class="eTextArea" name="NewDescription" value="@Model.Description"></textarea>
+
+            <input type="file" class="eImage" name="NewImage">
+
+            <div class="buttonsFrame">
+                <button class="editBtn" type="submit">Edit</button>
+                <button class="cancelBtn">Cancel</button>
+            </div>
+
+        </div>
+    </body>
+</html>
+</form>

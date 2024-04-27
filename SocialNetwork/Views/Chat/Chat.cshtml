@@ -1,0 +1,66 @@
+﻿@model SocialNetwork.Models.DatabaseModels.Chat
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@{
+    string id = Context.Request.RouteValues["id"].ToString();
+}
+@{
+    string idAccount = Context.Request.Query["IdAccount"].ToString();
+}
+@{
+    string idChat = Context.Request.Query["idChat"].ToString();
+} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/chat.css" type="text/css">
+    <title>Chat</title>
+</head>
+<body>
+    <div class="messageList" id="messagesList">
+        @if (Model!=null && Model.Messages!=null)
+        {
+            @foreach (SocialNetwork.Models.DatabaseModels.Message message in Model.Messages)
+            {
+                <div class="message" id="message-@message.Id">
+                    <div class="info">
+                <div class="name">
+                    @message.Account.Name
+                </div>
+                <div class="time">
+                    @message.Time
+                </div>
+            </div>
+            <div class="textMessage" id="text-@message.Id">
+                @message.Text;
+            </div>
+                    <div class="menuMessage">
+                        <button onclick="deleteMessage(@message.Id)">Delete</button>
+                        <button onclick="updateMessageBTN(@message.Id)">Update</button>
+                    </div>
+        </div>
+            }
+        }
+    </div>
+    <div class="inputFrame">
+        <input type="text" class="text" id="messageInput">
+        <button class="sendBTN" id="sendButton">
+            Send
+        </button>
+    </div>
+    <input style="visibility: hidden;" value="@id" id="idAccount" onclick="deleteMessage(@id)"/>
+    <input style="visibility: hidden;" value="@idChat" id="idChat" />
+
+
+    <form asp-controller="Chat" asp-action="Delete" asp-route-Id="@id" asp-route-IdChat="@Model.Id">
+        <button type="submit">Delete</button>
+    </form>
+    <form asp-controller="Chat" asp-action="Edit" asp-route-Id="@id" asp-route-IdChat="@Model.Id">
+        <button type="submit">Edit</button>
+    </form>
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.8/signalr.min.js"></script>
+<script src="~/js/chat.js"></script>

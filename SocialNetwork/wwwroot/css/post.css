@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    height:100vh;
+    width:100vw;
+}
+.postFrame{
+    border:1px solid black;
+    width:99.84%;
+    height:70%;
+}
+.headerFrame{
+    border:1px solid black;
+    width:100%;
+    height:7%;
+}
+.authorFrame{
+    width:50%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.author{
+    font-size:200%;
+}
+.timeFrame{
+    width:50%;
+    height:100%;
+    position:relative;
+    top:-100%;
+    left:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.time{
+    font-size:200%;
+}
+.textFrame{
+    width:100%;
+    height:40%;
+    overflow:hidden;
+}
+.text{
+    font-size:170%;
+}
+.imageFrame{
+    width:100%;
+    height:53%;
+}
+.imagePost{
+    width:100%;
+    height:100%;
+}

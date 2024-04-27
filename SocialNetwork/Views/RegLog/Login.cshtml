@@ -1,0 +1,64 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <div class="contentFrame">
+        <form asp-controller="RegLog" asp-action="Entering" method="post">
+
+        <div class="registrationForm">
+            <div class="regLabelFrame">
+                <label class="labelRegistration">Login</label>
+            </div>
+
+          
+
+
+            <div class="inputRegFrame">
+                <label class="labelName">Enter your email</label>
+                    <input type="email" class="inputName" name="Email">
+                <label class="labelName">Enter your password</label>
+                    <input type="password" class="inputName" name="Password">
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" id="myCheckbox">
+                    <label for="myCheckbox" class="labelCheck">Remember me</label>
+                </div>
+            </div>
+
+            <div class="buttonsFrame">
+                    <button class="regBtn" type="submit">Login</button>
+                <div class="btnFrame">
+                        <button class="btn" type="button">
+                        <img src="/Images/google.jpg" alt="google" class="image">
+                    </button>
+                        <button class="btn" type="button">
+                        <img src="/Images/facebook-3383596_1280.webp" alt="facebook" class="image">
+                    </button>
+                        <button class="btn" type="button">
+                        <img src="/Images/twitter.png" alt="twitter" class="image">
+                    </button>
+                </div>
+                </div>
+
+
+            </div>
+        </form>
+        <form asp-controller="RegLog" asp-action="Registration" method="get">
+            <button type="submit">Registration</button>
+        </form>
+        </div>
+
+</body>
+</html>
+

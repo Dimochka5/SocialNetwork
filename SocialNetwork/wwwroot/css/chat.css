@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+    padding: 0;
+    height:99vh;
+    width:99vw;
+}
+.messageList{
+    width:100%;
+    height:92%;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow:auto;
+}
+.inputFrame{
+    width:100%;
+    height:8%;
+    border:1px solid black;
+}
+.text{
+    width:90%;
+    height:100%;
+    border:1px solid black;
+    font-size:200%;
+}
+.sendBTN{
+    width:10%;
+    height:8.5%;
+    border:1px solid black;
+    position:absolute;
+    font-size:250%;
+}
+.message{
+    width:40%;
+    height:300px;
+    margin-left:1%;
+    margin-bottom:1%;
+    border:1px solid black;
+}
+.info{
+    width:100%;
+    height:20%;
+    border:1px solid white;
+}
+.name{
+    width:60%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:140%;
+}
+.time{
+    width:40%;
+    height:100%;
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:-100%;
+    left:60%;
+}
+.textMessage{
+    width:96%;
+    height:79%;
+    margin-left:2%;
+    word-break: break-word;
+    overflow:auto;
+    font-size:140%;
+}
+.menuMessage {
+    width: 20%;
+    height: 40%;
+    position: relative;
+    left: 100%;
+    top: -100%;
+}
+
+.menuMessage button {
+    width: 100%;
+    height: 50%;
+}
